@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学生健康状况申报</title>
+    <style>
+        .title {
+            text-align: center;
+        }
+
+        h1,
+        .Declaration {
+            padding: 0;
+            margin: 0;
+        }
+
+        .left_nav1 {
+            float: left;
+        }
+
+        .user_information_en,
+        .user_information_zh {
+            padding: 0;
+            margin: 0;
+        }
+
+        .right_nav1 {
+            float: right;
+        }
+
+        .Date {
+            padding: 0;
+            margin: 0;
+        }
+
+        .user_information {
+            clear: both;
+            border: 1px solid;
+            /* border-collapse: collapse; */
+            /* letter-spacing: 1px; */
+        }
+
+        td,
+        th {
+            border: 1px solid;
+            padding: 20px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        input[type='number'] {
+            -moz-appearance: textfield;
+        }
+
+        .button {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">
+        <h1>学生健康状况申报</h1>
+        <p class="Declaration"><strong>Student Health Declaration</strong></p>
+    </div>
+    <div class="left_nav1">
+        <p class="user_information_zh"><strong>个人基本信息</strong></p>
+        <p class="user_information_en"><strong>Basic Personal Information</strong></p>
+    </div>
+    <div class="right_nav1">
+        <p class="Date">申请日期:2020-07-28</p>
+        <p class="Date">&nbsp;Date</p>
+    </div>
+    <div class="form1">
+        <form action="#" class="user_information">
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="name">填报人姓名</label>
+                            <br>
+                            <label for="name">Name</label>
+                        </td>
+                        <td class="input">
+                            <input type="text" size="100%" id="name" required>
+                        </td>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="student_number">填报人学号</label>
+                            <br>
+                            <label for="student_number">Student Number</span></label>
+                        <td class="input">
+                            <input type="text" size="100%" id="student_number" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="Contact">填报人联系方式</label>
+                            <br>
+                            <label for="Contact">Contact</label>
+                        </td>
+                        <td class="input">
+                            <input type="text" size="100%" id="Contact" required>
+                        </td>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="Department">所在院系</label>
+                            <br>
+                            <label for="Department">Department/School</label>
+                        </td>
+                        <td class="input">
+                            <input type="text" size="100%" id="Department" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="Class">所在班级</label>
+                            <br>
+                            <label for="Class">Class</label>
+                        </td>
+                        <td class="input">
+                            <input type="text" size="100%" id="Class" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="Origin">籍贯</label>
+                            <br>
+                            <label for="Origin">Place of Origin</label>
+                        </td>
+                        <td colspan="3">
+                            <input type="radio" id="mainland" name="origin" checked>
+                            <label for="mainland">内地 (The Mainland of China) </label>
+                            <input type="radio" id="hk_macao_tw" name="origin">
+                            <label for="hk_macao_tw">港澳台籍 (Hong Kong, Macao or Taiwan )</label>
+                            <input type="radio" id="other_country" name="origin">
+                            <label for="other_country">外籍 (Other Countries or Regions) </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <select name="Province" id="Province">
+                                <option value="GD">广东省</option>
+                                <option value="SC">四川省</option>
+                                <option value="Shanghai">上海</option>
+                                <option value="BJ">北京</option>
+                            </select>
+                            <label for="Province">省Province</label>
+                            <select name="City" id="City">
+                                <option value="GZ">广州市</option>
+                                <option value="FS">佛山市</option>
+                                <option value="ZH">珠海市</option>
+                                <option value="SZ">深圳市</option>
+                            </select>
+                            <label for="City">市City</label>
+                            <select name="District" id="District">
+                                <option value="YX">越秀区</option>
+                                <option value="LW">荔湾区</option>
+                                <option value="BY">白云区</option>
+                                <option value="PY">番禺区</option>
+                            </select>
+                            <label for="District">区（县、镇）District (County, Town) </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="Education">培养层次</label>
+                            <br>
+                            <label for="Education">Education Level</label>
+                        </td>
+                        <td class="input">
+                            <select name="Education" id="Education">
+                                <option value="undergraduate">本科生</option>
+                                <option value="postgraduate">研究生</option>
+                                <option value="PhD">博士生</option>
+                                <option value="its_me">已退学</option>
+                            </select>
+                        </td>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="Full_time">是否全日制</label>
+                            <br>
+                            <label for="Full_time">Full-time Course or Not</label>
+                        </td>
+                        <td class="input">
+                            <input type="text" size="100%" id="Full_time" placeholder="请填写“是”或“否”">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="EmergencyContact">紧急联系人</label>
+                            <br>
+                            <label for="EmergencyContact">Emergency Contact </label>
+                        </td>
+                        <td>
+                            <input type="text" id="EmergencyContact" size="100%">
+                        </td>
+                        <td>
+                            <label for="EmergencyPhone">紧急联系人手机号</label>
+                            <br>
+                            <label for="EmergencyPhone">Emergency Contact Phone Number</label>
+                        </td>
+                        <td>
+                            <input type="text" minlength="11" maxlength="11" step="any" value="" size="100%"
+                                id="EmergencyPhone"
+                                pattern="(\d{11})|^((\d{7,8})|(\d{4}|\d{3})-(\d{7,8})|(\d{4}|\d{3})-(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1})|(\d{7,8})-(\d{4}|\d{3}|\d{2}|\d{1}))$">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <div class="left_nav2">
+        <p class="user_information_zh"><strong>当前身体情况</strong></p>
+        <p class="user_information_en"><strong>
+                State of Health </strong></p>
+    </div>
+
+    <div class="form2">
+        <form action="#" class="user_information">
+            <table>
+                <thead></thead>
+                <tbody>
+                    <td>
+                        <span style="color: red;">*</span>
+                        <label for="state_of_health">当前身体状况</label>
+                        <br>
+                        <label for="state_of_health">State of Health </label>
+                    </td>
+                    <td class="stateofhealth" colspan="3" style="width: 100%;">
+                        <input type="radio" id="Healthy" name="state_of_health" checked>
+                        <label for="Healthy">正常(Healthy)</label>
+
+                        <input type="radio" id="Sick" name="state_of_health">
+                        <label for="Sick">不适(Sick)</label>
+
+                        <input type="radio" id="Isolated" name="state_of_health">
+                        <label for="Isolated">隔离(Isolated)</label>
+
+                        <input type="radio" id="Suspected" name="state_of_health">
+                        <label for="Suspected">疑似(Suspected)</label>
+
+                        <input type="radio" id="Confirmed" name="state_of_health">
+                        <label for="Confirmed">确诊(Confirmed) </label>
+
+                        <input type="radio" id="Cured" name="state_of_health">
+                        <label for="Cured">治愈(Cured)</label>
+
+                        <input type="radio" id="SuspectedCase" name="state_of_health">
+                        <label for="SuspectedCase">疑似转排除(Suspected Case Turning out Negative)</label>
+                    </td>
+                    <tr>
+                        <td>
+                            <label for="other_situation">其他情况说明</label>
+                            <label for="other_situation">Other Details to Declare</label>
+                        </td>
+                        <td>
+                            <textarea name="other_situation" id="other_situation" cols="100%" rows="10"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+    <div class="left_nav3">
+        <p class="user_information_zh"><strong>出行信息</strong></p>
+        <p class="user_information_en"><strong>Travel Information</strong></p>
+    </div>
+    <div class="form3">
+        <form action="#" class="user_information">
+            <table>
+                <thead></thead>
+                <tbody>
+                    <td>
+                        <span style="color: red;">*</span>
+                        <label for="current_location">目前所在地</label>
+                        <br>
+                        <label for="current_location"> Current Location</label>
+                    </td>
+                    <td class="location" colspan="3">
+                        <input type="radio" id="Home" name="current_location" checked>
+                        <label for="Home">在家(Home)</label>
+
+                        <input type="radio" id="Campus" name="current_location">
+                        <label for="Campus">在校(Campus)</label>
+
+                        <input type="radio" id="Other" name="current_location">
+                        <label for="Other">在外地(Other Places)</label>
+
+                        <input type="radio" id="Back" name="current_location">
+                        <label for="Back">返校途中(On the Way Back To Campus)</label>
+                    </td>
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="Home_Address">家庭住址</label>
+                            <label for="Home_Address">Home Address</label>
+                        </td>
+                        <td colspan="3">
+                            <input type="text" id="province" value="">
+                            <label for="province">省Province</label>
+                            <input type="text" id="city" value="">
+                            <label for="city">市City</label>
+                            <input type="text" id="district" value="">
+                            <label for="district">区（县、镇）District(County,Town)</label>
+                            <textarea name="address" id="address" cols="30" rows="1">家庭具体地址</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="travel_info">近14天内有无曾驻留其他国家、地区或国（ 境）外居旅史</label>
+                            <br>
+                            <label for="travel_info">if Have Stayed at Other Countries/ District within 14 days</label>
+                        </td>
+                        <td>
+                            <input type="radio" id="travel_info_yes" name="travel_info">
+                            <label for="travel_info_yes">有(Yes)</label>
+                            <input type="radio" id="travel_info_no" name="travel_info">
+                            <label for="travel_info_no">无(No)</label>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+    <div class="left_nav4">
+        <p class="user_information_zh"><strong>疫情经历</strong></p>
+        <p class="user_information_en"><strong>Recent Experience</strong></p>
+    </div>
+    <div class="form4">
+        <form action="#" class="user_information">
+            <table>
+                <thead></thead>
+                <tbody>
+                    <td>
+                        <span style="color: red;">*</span>
+                        <label for="family_info">家人是否存在确诊/疑似病例</label>
+                        <br>
+                        <label for="family_info">Have your family members been confirmed or suspected
+                            as novel </label>
+                    </td>
+                    <td class="family_info" colspan="2">
+                        <input type="radio" id="family_info_yes" name="family_info">
+                        <label for="family_info_yes">有(Yes)</label>
+                        <input type="radio" id="family_info_no" name="family_info">
+                        <label for="family_info_no" checked>否(No)</label>
+                    </td>
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="contact_info">14天（按填报日期往前倒推）内是否接触确诊/疑似病例或无症状感染者（14天为最长潜伏期）</label>
+                            <br>
+                            <label for="contact_info">Have you had contact with any
+                                confirmed or suspected patient within 14 days (Backward from the filing date)?
+                                (Incubation period won’t be longer than 14 days.)
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="contact_info_yes" name="contact_info">
+                            <label for="contact_info_yes">有(Yes)</label>
+                            <input type="radio" id="contact_info_no" name="contact_info">
+                            <label for="contact_info_no">否(No)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="in_beijing">当前是否在北京</label>
+                            <br>
+                            <label for="in_beijing">Are you in Beijing
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="in_beijing_yes" name="in_beijing">
+                            <label for="in_beijing_yes">是(Yes)</label>
+                            <input type="radio" id="in_beijing_no" name="in_beijing">
+                            <label for="in_beijing_no">否(No)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="through_beijing"> 14天（按填报日期往前倒推）内是否途经北京市返粤（14天为最长潜伏期）</label>
+                            <br>
+                            <label for="through_beijing">Have you been to Beijing on your way back to Guangdong within
+                                14
+                                days (Backward from the filing date)?
+                                (Incubation period won’t be longer than 14 days.)
+
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="through_beijing_yes" name="through_beijing">
+                            <label for="through_beijing_yes">是(Yes)</label>
+                            <input type="radio" id="through_beijing_no" name="through_beijing">
+                            <label for="through_beijing_no">否(No)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color: red;">*</span>
+                            <label for="contact_beijing">14天（按填报日期往前倒推）内是否接触过北京返粤人员</label>
+                            <br>
+                            <label for="contact_beijing"> Have you had contact with any person
+                                who have been to Beijing within 14 days?
+                            </label>
+                        </td>
+                        <td>
+                            <input type="radio" id="contact_beijing_yes" name="contact_beijing">
+                            <label for="contact_beijing_yes">是(Yes)</label>
+                            <input type="radio" id="contact_beijing_no" name="contact_beijing">
+                            <label for="contact_beijing_no">否(No)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100%" colspan="3">
+                            <input type="checkbox" id="info_true" name="info_true" value="info_true">
+                            <label for="info_true">本人承诺以上填写内容均真实可靠</label>
+                            <br>
+                            <label for="info_true">I hereby certify that the information provided above is true and
+                                correct. </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="button">
+                <button type="submit">
+                    提交
+                </button>
+                <button type="reset">
+                    重置
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

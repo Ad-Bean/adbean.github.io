@@ -1,0 +1,27 @@
+html {
+    font-family: sans-serif;
+}
+  
+/* Your CSS below here */
+p {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin: 20% auto;
+
+    /* 16px * 1.1 = 17.6px */
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    background-color: #ff0000;
+    color: #ff0000;
+    text-shadow: 1px 1px 1px black;
+
+    border-radius: 10px;
+    border: 1px solid #b41414;
+    background-image: linear-gradient(135deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2049020291710434) 30%, rgba(0,0,0,0.1964986678265056) 100%);
+    box-shadow: 2px 2px 5px black,
+                inset 2px 2px 5px rgba(255, 255, 255, 0.5),      /* left top */
+                inset -2px -2px 5px rgba(0, 0, 0, 0.5);          /* right bottom */
+}

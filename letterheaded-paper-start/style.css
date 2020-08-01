@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: sans-serif;
+  }
+  
+  body {
+    margin: 0;
+    background: #ccc;
+  }
+  
+  article {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    position: relative;
+  }
+  
+address {
+    position: absolute;
+    bottom: 8mm;
+    right: 20mm;
+}
+
+h1 {
+    position: absolute;
+    top: 12mm;
+    left: 20mm;
+    width: 128px;
+    height: 128px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 44px 0;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+/* Your CSS below here */
+article {
+    /* Add another background declaration that just adds the top image to the top of the letter,  */
+    background: url(top-image.png) no-repeat left top;
+
+    /* Fixes the top image to the top of the letter */
+    /* Fixes the bottom image to the bottom of the letter */
+    /* Adds a semi-transparent gradient */
+    background: linear-gradient(0deg, rgba(0,0,0,0.2), white 25%, white 70%, rgba(0,0,0,0.2)),
+                url(top-image.png) no-repeat left top,
+                url(bottom-image.png) no-repeat left bottom;
+    /* Add a white background color to the letter. */
+    background-color: white;
+    /* Add a 1mm top and bottom solid border to the letter */
+    border-top: 1mm solid #ff0000;
+    border-bottom: 1mm solid #ff0000;
+}
+
+h1 {
+    /* To the <h1>, add the logo as a background image. */
+    background: url(logo.png) no-repeat;
+    
+    /* implement the drop shadow in a different (slightly more cross-browser compatible) way, */
+    border-radius: 64px;
+    box-shadow: 5px 5px 2px #2b2c2b;
+
+    /* Add a filter to the logo to give it a subtle drop shadow. */
+    /* filter: drop-shadow(5px 5px 2px #2b2c2b); */
+}

@@ -117,14 +117,17 @@ EvilCircle.prototype.checkBounds = function () {
 EvilCircle.prototype.setControls = function () {
     let _this = this;
     window.onkeydown = function (e) {
-        if (e.key === 'a') {
+        if (e.key === 'a' || e.keyCode === 37) {
             _this.x -= _this.velX;
-        } else if (e.key === 'd') {
+        } else if (e.key === 'd' || e.keyCode === 39) {
             _this.x += _this.velX;
-        } else if (e.key === 'w') {
+        } else if (e.key === 'w' || e.keyCode === 38) {
             _this.y -= _this.velY;
-        } else if (e.key === 's') {
+        } else if (e.key === 's' || e.keyCode === 40) {
             _this.y += _this.velY;
+        } else if (e.keyCode === 32) {
+            _this.x = random(0, width);
+            _this.y = random(0, height);
         }
     };
 };
@@ -138,7 +141,7 @@ EvilCircle.prototype.collisionDetect = function () {
             if (distance < this.size + balls[j].size) {
                 balls[j].exists = false;
                 counter--;
-                paragraph.textContent = 'Ball count: ' + counter;
+                paragraph.textContent = '(Use space to flash, wasd or arrow to shift)Ball count: ' + counter;
             }
         }
     }
@@ -163,7 +166,7 @@ while (balls.length < 25) {
     );
     balls.push(ball);
     counter++;
-    paragraph.textContent = 'Ball count: ' + counter;
+    paragraph.textContent = '(Use space to flash, wasd or arrow to shift)Ball count: ' + counter;
 }
 
 // define loop that keeps drawing the scene constantly

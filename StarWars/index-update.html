@@ -78,7 +78,7 @@
             temp.textContent = 'Loading...';
             list.innerHTML = '';
             list.appendChild(temp);
-            console.log(input.value);
+            // console.log(input.value);
 
             fetch('https://swapi.dev/api/people/?search=' + input.value)
                 .then(response => response.json())
@@ -98,7 +98,7 @@
                 .catch(e => { console.log('error: ' + e.message); });
         }
 
-        input.oninput = debounce(searchPeople, 10000);
+        input.oninput = debounce(searchPeople, 500);
     </script>
 </body>
 

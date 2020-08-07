@@ -16,6 +16,7 @@ async function searchPeople() {
     await debounce();
     let loading = document.createElement('p');
     loading.textContent = 'Loading...';
+    list.innerHTML = "";
     list.appendChild(loading);
     fetch('https://swapi.dev/api/people/?search=' + search.value)
         .then(response => { return response.json(); })
@@ -24,6 +25,7 @@ async function searchPeople() {
             if (ppl.length === 0)
                 loading.textContent = 'No results.';
             else {
+                list.innerHTML = "";
                 for (let index = 0; index < ppl.length; index++) {
                     const res = document.createElement('li');
                     res.textContent = ppl[index].name;

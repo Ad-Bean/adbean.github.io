@@ -6,7 +6,7 @@ function debounce() {
         let wait = setTimeout(() => {
             resolve("done");
         }, 500);
-        input.addEventListener("input", () => {
+        search.addEventListener("input", () => {
             clearTimeout(wait);
         })
     });
@@ -17,7 +17,7 @@ async function searchPeople() {
     let loading = document.createElement('p');
     loading.textContent = 'Loading...';
     list.appendChild(loading);
-    fetch('https://swapi.dev/api/people/?search=' + input.value)
+    fetch('https://swapi.dev/api/people/?search=' + search.value)
         .then(response => { return response.json(); })
         .then(result => {
             let ppl = result.results;

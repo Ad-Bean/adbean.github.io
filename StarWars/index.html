@@ -20,16 +20,18 @@
         }
 
         label {
-            font-size: 1.5em;
+            font-size: 1.7em;
             font-weight: bold;
         }
 
         input {
             width: 20em;
+            font-size: 1.3em;
         }
 
         li {
             list-style: none;
+            font-size: 1.3em;
             margin: 5px;
             padding: 0;
         }
@@ -54,7 +56,43 @@
             <li>Obi-Wan Kenobi</li>
         </ul>
     </section>
-    <script src="main.js">
+    <script>
+        let input = document.querySelector('input')
+        let list = document.querySelector('ul')
+        input.focus();
+        function debounce() {
+            return new Promise(resolve => {
+                let debouncing = setTimeout(() => resolve("finished inputing"), 500);
+
+                input.addEventListener("input", () => clearTimeout(debouncing));
+            })
+        }
+        async function searchPeople() {
+            await debounce();
+            let temp = document.createElement('li');
+            temp.textContent = 'Loading...';
+            list.innerHTML = '';
+            list.appendChild(temp);
+
+            fetch('https://swapi.dev/api/people/?search=' + input.value)
+                .then(response => response.json())
+                .then(jsonfile => {
+                    let ppl = jsonfile.results;
+                    if (ppl.length === 0)
+                        temp.textContent = 'No results.';
+                    else {
+                        list.innerHTML = '';
+                        for (let index = 0; index < ppl.length; index++) {
+                            const res = document.createElement('li');
+                            res.textContent = ppl[index].name;
+                            list.appendChild(res);
+                        }
+                    }
+                })
+                .catch(e => { console.log('error: ' + e.message); });
+        }
+
+        input.addEventListener("input", searchPeople);
     </script>
 </body>
 

@@ -34,3 +34,5 @@ async function searchPeople() {
             }
         }).catch(e => { console.log('error' + e.message); });
 }
+
+search.addEventListener("input", searchPeople);

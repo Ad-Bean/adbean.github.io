@@ -1,12 +1,12 @@
-let search = document.querySelector('input')
+let input = document.querySelector('input')
 let list = document.querySelector('ul')
-search.focus();
+input.focus();
 function debounce() {
     return new Promise(resolve => {
         let wait = setTimeout(() => {
             resolve("done");
         }, 500);
-        search.addEventListener("input", () => {
+        input.addEventListener("input", () => {
             clearTimeout(wait);
         })
     });
@@ -18,7 +18,7 @@ async function searchPeople() {
     loading.textContent = 'Loading...';
     list.innerHTML = "";
     list.appendChild(loading);
-    fetch('https://swapi.dev/api/people/?search=' + search.value)
+    fetch('https://swapi.dev/api/people/?search=' + input.value)
         .then(response => { return response.json(); })
         .then(result => {
             let ppl = result.results;
@@ -35,4 +35,4 @@ async function searchPeople() {
         }).catch(e => { console.log('error' + e.message); });
 }
 
-search.addEventListener("input", searchPeople);
+input.addEventListener("input", searchPeople);
